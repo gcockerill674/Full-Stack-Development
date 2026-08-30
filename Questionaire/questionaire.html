@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Questionaire</title>
+        <link rel="stylesheet" href="questionaire.css">
+    </head>
+    <body>
+        <h1>Questionaire</h1>
+        <form>
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" id="fname" name="fname" required>
+            <br>
+            <br>
+            <label for="lname">Last Name:</label>
+            <br>
+            <input type="text" id="lname" name="lname" required>
+            <br>
+            <br>
+            <label for="sport">Choose Your Favorite Sport:</label>
+            <br>
+            <select id="sport" name="sport" required>
+                <option value=""></option>
+                <option value="football">Football</option>
+                <option value="basketball">Basketball</option>
+                <option value="baseball">Baseball</option>
+                <option value="soccer">Soccer</option>
+                <option value="tennis">Tennis</option>
+                <option value="golf">Golf</option>
+                <option value="track">Track</option>
+                <option value="cross-country">Cross Country</option>
+            </select>
+            <br>
+            <br>
+            <p>Choose Your Favorite Music Genre:</p>
+            <input type="radio" id="rock" name="music" value="rock" required>
+            <label for="rock">Rock</label>
+            <input type="radio" id="jazz" name="music" value="jazz" required>
+            <label for="jazz">Jazz</label>
+            <input type="radio" id="classical" name="music" value="classical" required>
+            <label for="classical">Classical</label>
+            <input type="radio" id="pop" name="music" value="pop" required>
+            <label for="pop">Pop</label>
+            <input type="radio" id="hip-hop" name="music" value="hip-hop" required>
+            <label for="hip-hop">Hip-Hop</label>
+            <input type="radio" id="country" name="music" value="country" required>
+            <label for="country">Country</label>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
