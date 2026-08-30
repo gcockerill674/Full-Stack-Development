@@ -1,0 +1,51 @@
+.box {
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 calc(25% - 20px);
+    min-width: 0;
+    height: 400px;
+}
+.link {
+    background-color: rgb(53, 50, 50);
+}
+.image {
+    background-color: rgb(90, 89, 89);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    flex: 1 1 auto;
+    object-fit: cover;
+}
+.video {
+    background-color: gray;
+}
+.Geolocation {
+    background-color: lightgray;
+}
+video {
+    width: 100%;
+}
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media (max-width: 992px) {
+    .box {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        flex-basis: 100%;
+    }
+}

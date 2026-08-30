@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Media Grid</title>
+        <link rel="stylesheet" href="landingAI.css">
+    </head>
+    <body>
+        <header class="page-header">
+            <p class="eyebrow">Explore the web</p>
+            <h1>Four ways to connect.</h1>
+            <p class="intro">A responsive collection of links, imagery, motion, and location.</p>
+        </header>
+
+        <main class="content-grid">
+            <section class="content-box link-box">
+                <p class="box-number">01</p>
+                <h2>Go somewhere new</h2>
+                <p>Start with a useful destination on the web.</p>
+                <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">Visit MDN Web Docs <span aria-hidden="true">&#8599;</span></a>
+            </section>
+
+            <section class="content-box image-box">
+                <p class="box-number">02</p>
+                <h2>A view worth keeping</h2>
+                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85" alt="Sunlit mountain range reflected in a lake">
+            </section>
+
+            <section class="content-box video-box">
+                <p class="box-number">03</p>
+                <h2>See it in motion</h2>
+                <video controls preload="metadata" poster="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=70">
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+            </section>
+
+            <section class="content-box location-box">
+                <p class="box-number">04</p>
+                <h2>Find your coordinates</h2>
+                <p id="location-status">Use the button to share your approximate location with this page.</p>
+                <button id="location-button" type="button">Get my location</button>
+                <output id="coordinates" aria-live="polite"></output>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Responsive Media Grid</p>
+        </footer>
+
+        <script>
+            const locationButton = document.querySelector('#location-button');
+            const locationStatus = document.querySelector('#location-status');
+            const coordinates = document.querySelector('#coordinates');
+
+            function showCoordinates(position) {
+                const latitude = position.coords.latitude.toFixed(5);
+                const longitude = position.coords.longitude.toFixed(5);
+                locationStatus.textContent = 'Your browser shared this location:';
+                coordinates.textContent = `Latitude ${latitude}\nLongitude ${longitude}`;
+                locationButton.textContent = 'Refresh location';
+            }
+
+            function showLocationError(error) {
+                const messages = {
+                    1: 'Location permission was denied. You can allow it in your browser settings.',
+                    2: 'Your location could not be determined. Please try again.',
+                    3: 'The location request timed out. Please try again.'
+                };
+                locationStatus.textContent = messages[error.code] || 'Location is not available right now.';
+                coordinates.textContent = '';
+                locationButton.disabled = false;
+            }
+
+            function getLocation() {
+                if (!navigator.geolocation) {
+                    locationStatus.textContent = 'Geolocation is not supported by this browser.';
+                    return;
+                }
+
+                locationButton.disabled = true;
+                locationStatus.textContent = 'Requesting your location...';
+                coordinates.textContent = '';
+                navigator.geolocation.getCurrentPosition(showCoordinates, showLocationError, {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
+                });
+            }
+
+            locationButton.addEventListener('click', getLocation);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Media Grid</title>
+        <link rel="stylesheet" href="landing.css">
+        <script src="landing.js" defer></script>
+    </head>
+    <body>
+        <header class="page-header">
+            <h1>Responsive Four Entry Layout Using a Flexbox</h1>
+            <p><b>Resize the browser window to see the responsive effects</b></p>
+            <p>On screens that are 992 px wide or less, the columns will resize from four columns to two columns</p>
+            <p>On screens that are 600px wide or less, the columns will stack on top of each other instead of next to eachother </p>
+        </header>
+        <main>
+            <div class="boxes">
+                <div class="link box">
+                    <h1>Entry 1 - A link (hyperlink)</h1>
+                    <a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">Visit W3Schools! <span aria-hidden="true">&#8599;</span></a>
+                </div>
+                <div class="image box">
+                    <h1>Entry 2 - An image</h1>
+                    <img src="sunrise.jpeg" alt="Gregory Cockerill on a lake at sunrise">
+                </div>
+                <div class="video box">
+                    <h1>Entry 3 - A video</h1>
+                    <video width="300" height="225" controls>
+                    <source src="hello_princess.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="Geolocation box">
+                <h1>Entry 4 - use of the Geolocation API</h1>
+                <p>Click the button to get your coordinates</p>
+                <button onclick="getLocation()">Get Coordinates</button>
+                <p id="location-output" aria-live="polite"></p>
+                </div>
+            </div>
+        </main>
