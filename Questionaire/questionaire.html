@@ -5,75 +5,66 @@
         <link rel="stylesheet" href="questionaire.css">
     </head>
     <body>
-        <h1>Questionaire</h1>
-        <form>
-            <label for="name">Name:</label>
-            <br>
-            <input type="text" id="fname" name="fname" required>
-            <br>
-            <br>
-            <label for="lname">Last Name:</label>
-            <br>
-            <input type="text" id="lname" name="lname" required>
-            <br>
-            <br>
-            <label for="sport">Choose Your Favorite Sport:</label>
-            <br>
-            <select id="sport" name="sport" required>
-                <option value=""></option>
-                <option value="football">Football</option>
-                <option value="basketball">Basketball</option>
-                <option value="baseball">Baseball</option>
-                <option value="soccer">Soccer</option>
-                <option value="tennis">Tennis</option>
-                <option value="golf">Golf</option>
-                <option value="track">Track</option>
-                <option value="cross-country">Cross Country</option>
-            </select>
-            <br>
-            <br>
-            <p>Choose Your Favorite Music Genre:</p>
-            <input type="radio" id="rock" name="music" value="rock" required>
-            <label for="rock">Rock</label>
-            <br>
-            <input type="radio" id="jazz" name="music" value="jazz" required>
-            <label for="jazz">Jazz</label>
-            <br>
-            <input type="radio" id="pop" name="music" value="pop" required>
-            <label for="pop">Pop</label>
-            <br>
-            <input type="radio" id="hip-hop" name="music" value="hip-hop" required>
-            <label for="hip-hop">Hip-Hop</label>
-            <br>
-            <input type="radio" id="country" name="music" value="country" required>
-            <label for="country">Country</label>
-            <br>
-            <input type="radio" id="other" name="music" value="other" required>
-            <label for="other">Other</label>
-            <br>
-            <br>
-            <p>What Brands Do You Know?</p>
-            <input type="checkbox" id="ford" name="car" value="ford">
-            <label for="ford">Ford</label>
-            <br>
-            <input type="checkbox" id="chevy" name="car" value="chevy">
-            <label for="chevy">Chevrolet</label>
-            <br>
-            <input type="checkbox" id="honda" name="car" value="honda">
-            <label for="honda">Honda</label>
-            <br>
-            <input type="checkbox" id="toyota" name="car" value="toyota">
-            <label for="toyota">Toyota</label>
-            <br>
-            <input type="checkbox" id="nissan" name="car" value="nissan">
-            <label for="nissan">Nissan</label>
-            <br>
-            <br>
-            <p>What do you like about Doane University?</p>
-            <textarea name="comments" rows="5" cols="40" placeholder="Write here..." required></textarea>
-            <br>
-            <br>
-            <input type="submit" value="Submit">
+        <h1 class="page-title">Questionaire</h1>
+        <form class="forms">
+            <div class="field-group">
+                <label class="direct" for="fname">Name:</label>
+                <input class="text-input" type="text" id="fname" name="fname" required>
+            </div>
+
+            <div class="field-group">
+                <label class="direct" for="lname">Last Name:</label>
+                <input class="text-input" type="text" id="lname" name="lname" required>
+            </div>
+
+            <div class="field-group">
+                <label class="direct" for="sport">Choose Your Favorite Sport:</label>
+                <select class="select-input" id="sport" name="sport" required>
+                    <option value=""></option>
+                    <option value="football">Football</option>
+                    <option value="basketball">Basketball</option>
+                    <option value="baseball">Baseball</option>
+                    <option value="soccer">Soccer</option>
+                    <option value="tennis">Tennis</option>
+                    <option value="golf">Golf</option>
+                    <option value="track">Track</option>
+                    <option value="cross-country">Cross Country</option>
+                </select>
+            </div>
+
+            <div class="option-group">
+                <p class="direct">Choose Your Favorite Music Genre:</p>
+                <div class="choice-row"><input type="radio" id="rock" name="music" value="rock" required><label for="rock">Rock</label></div>
+                <div class="choice-row"><input type="radio" id="jazz" name="music" value="jazz" required><label for="jazz">Jazz</label></div>
+                <div class="choice-row"><input type="radio" id="pop" name="music" value="pop" required><label for="pop">Pop</label></div>
+                <div class="choice-row"><input type="radio" id="hip-hop" name="music" value="hip-hop" required><label for="hip-hop">Hip-Hop</label></div>
+                <div class="choice-row"><input type="radio" id="country" name="music" value="country" required><label for="country">Country</label></div>
+                <div class="choice-row"><input type="radio" id="other" name="music" value="other" required><label for="other">Other</label></div>
+            </div>
+
+            <div class="option-group">
+                <p class="direct">What Brands Do You Know?</p>
+                <div class="choice-row"><input type="checkbox" id="ford" name="car" value="ford"><label for="ford">Ford</label></div>
+                <div class="choice-row"><input type="checkbox" id="chevy" name="car" value="chevy"><label for="chevy">Chevrolet</label></div>
+                <div class="choice-row"><input type="checkbox" id="honda" name="car" value="honda"><label for="honda">Honda</label></div>
+                <div class="choice-row"><input type="checkbox" id="toyota" name="car" value="toyota"><label for="toyota">Toyota</label></div>
+                <div class="choice-row"><input type="checkbox" id="nissan" name="car" value="nissan"><label for="nissan">Nissan</label></div>
+            </div>
+
+            <div class="field-group">
+                <p class="direct">What do you like about Doane University?</p>
+                <textarea class="textarea-input" name="comments" rows="5" cols="40" placeholder="Write here..." required></textarea>
+            </div>
+
+            <div class="submit-wrap">
+                <input class="submit-btn" type="submit" value="Submit">
+            </div>
+            <script>
+                document.querySelector('.forms').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent the form from submitting normally
+                    alert('Thank you for submitting the form!');
+                });
+            </script>
         </form>
     </body>
 </html>
