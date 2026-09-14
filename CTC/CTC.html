@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CTC.css">
+    <script src="CTC.js" defer></script>
+    <title>Central Tendency Calculator</title>
+</head>
+<body>
+    <h1>Central Tendency Calculator</h1>
+    <div class="flex-row">
+        <div class="flex-column">
+            <h2>1: Enter your ranges</h2>
+            <h2>2: Enter a number to input</h2>
+            <form>
+                <p>Enter Minimum: </p><input type="text" id="minimum">
+                <br>
+                <p>Enter Maximum: </p><input type="text" id="maximum">
+                <br>
+                <p>Enter a number: </p><input type="text" id="number"><input class="submit"type="button" value="Add Number" onclick="addNumber()">
+                <br>
+                <br>
+                <input type="button" value="Clear" onclick="clearInputs()">
+            </form>
+        </div>
+        <div class="flex-column">
+            <h2>Numbers in List</h2>
+            <ul id="numberList"></ul>
+        </div>
+        <div class="flex-column">
+            <h2>Results</h2>
+            <p id="mean">Mean: </p>
+            <p id="median">Median: </p>
+            <p id="mode">Mode: </p>
+
+        </div>
+    </div>
+    
+</body>
+    
