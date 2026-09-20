@@ -1,0 +1,20 @@
+select {
+    width: 155px
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    flex: 1;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .flex-row {
+        flex-direction: column;
+    }
+}
