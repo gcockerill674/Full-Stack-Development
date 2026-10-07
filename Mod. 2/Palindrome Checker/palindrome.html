@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="palindrome.css">
+    <script src="palindrome.js" defer></script>
+    <title>Palindrome Checker</title>
+</head>
+<body class="page">
+    <main class="checker">
+        <header class="checker__header">
+            <p class="eyebrow">String practice</p>
+            <h1>Palindrome Checker</h1>
+            <p class="intro">Test a sentence and compare the results with different letter-case rules.</p>
+        </header>
+
+        <div class="checker__grid">
+            <section class="panel panel--form">
+                <h2>Check a sentence</h2>
+                <form class="checker-form">
+                    <label class="field-label" for="string">Sentence</label>
+                    <input class="text-input" type="text" id="string" placeholder="Enter a word or sentence">
+
+                    <label class="field-label" for="method">Comparison method</label>
+                    <select class="select-input" id="method">
+                        <option value="method_one">For Loop - Case Sensitive</option>
+                        <option value="method_two">For Loop - Non-Case Sensitive</option>
+                        <option value="method_three">String Reverse - Case Sensitive</option>
+                        <option value="method_four">One-liner - Case Sensitive</option>
+                    </select>
+
+                    <div class="button-group">
+                        <input class="button button--primary" type="button" value="Check palindrome" onclick="checkPalindrome(document.getElementById('string').value, document.getElementById('method').value)">
+                        <input class="button button--secondary" type="button" value="Clear" onclick="clearInputs()">
+                    </div>
+                </form>
+            </section>
+
+            <section class="panel result-panel">
+                <h2>Case sensitive</h2>
+                <ul class="result-list" id="caseSensitive"></ul>
+            </section>
+
+            <section class="panel result-panel">
+                <h2>Non-case sensitive</h2>
+                <ul class="result-list" id="nonCaseSensitive"></ul>
+            </section>
+
+            <section class="panel result-panel">
+                <h2>String reverse</h2>
+                <ul class="result-list" id="stringReverse"></ul>
+            </section>
+            <section class="panel result-panel">
+                <h2>One-liner</h2>
+                <ul class="result-list" id="oneLiner"></ul>
+            </section>
+        </div>
+    </main>
+</body>
+    
