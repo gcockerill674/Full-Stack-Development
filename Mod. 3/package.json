@@ -1,0 +1,16 @@
+{
+  "name": "mod-3-servers",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:back-end-service": "node \"Back End Service/backEnd.js\"",
+    "start:express-hello": "node \"Express Hello/expressHello.js\"",
+    "start:node-hello": "node \"Node Hello/nodeHello.js\"",
+    "start:to-do-api": "node \"To Do API/checkList.js\"",
+    "start:dog-list-api": "node \"Dog List API/dogserver.js\""
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "joi": "^18.0.1"
+  }
+}
