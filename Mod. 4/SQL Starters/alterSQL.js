@@ -13,15 +13,6 @@ con.connect(function(err) {
         console.log(err);
         return;
     }
-
-    con.query('ALTER DATABASE IF NOT EXISTS `registration-system`', function(err) {
-        if (err) {
-            console.log("Error creating database:");
-            console.log(err);
-            con.end();
-            return;
-        }
-
         con.query(
             'ALTER TABLE `registration-system`.students RENAME COLUMN id TO student_id',
             function(err) {
@@ -36,4 +27,3 @@ con.connect(function(err) {
             }
         );
     });
-});
