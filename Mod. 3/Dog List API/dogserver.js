@@ -32,7 +32,7 @@ let nextId = dogs.length + 1;
 
 // Route to serve the main HTML page
 app.get('/', (req, res) => {
-  res.send('Welcome to the Dog List API. Please try /api/population to see the list of dogs.');
+  res.sendFile(path.join(__dirname, 'dog.html'));
 });
 
 // Route to serve the client-side JavaScript file
