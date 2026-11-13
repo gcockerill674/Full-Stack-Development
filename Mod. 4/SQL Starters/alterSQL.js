@@ -14,7 +14,7 @@ con.connect(function(err) {
         return;
     }
         con.query(
-            'ALTER TABLE `registration-system`.students RENAME COLUMN id TO student_id',
+            'ALTER TABLE `registration-system`.students RENAME COLUMN `student_id` TO `ID`',
             function(err) {
                 if (err) {
                     console.log("Error altering table:");

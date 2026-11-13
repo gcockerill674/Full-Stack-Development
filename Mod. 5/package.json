@@ -1,0 +1,16 @@
+{
+  "name": "mod-5-registration-api",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node \"Capstone Project/registrationServer.js\""
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "joi": "^18.0.1",
+    "mysql2": "^3.24.6"
+  }
+}

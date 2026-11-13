@@ -15,16 +15,16 @@ con.connect(function(err) {
     }
 
     con.query(
-        'SELECT id, name, address FROM customers.customers',
+        'SELECT `student_id`, `first-name`, `last-name`, `email` FROM `registration-system`.students',
         function(err, results) {
             if (err) {
-                console.log("Error selecting customers:");
+                console.log("Error selecting students:");
                 console.log(err);
                 con.end();
                 return;
             }
 
-            console.log("Customers:");
+            console.log("Students:");
             console.log(results);
             con.end();
         }
