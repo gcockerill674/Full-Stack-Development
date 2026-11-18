@@ -22,7 +22,7 @@ const studentSchema = Joi.object({
 });
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the students API');
+    res.send('Welcome to the registration API');
 });
 
 app.get('/api/students', async (req, res) => {
@@ -134,4 +134,16 @@ app.delete('/api/students/:id', async (req, res) => {
 
 app.listen(Number(process.env.PORT) || 3000, () => {
     console.log(`Server is running on port ${Number(process.env.PORT) || 3000}`);
+});
+
+//Start of the api for the faculty section
+
+app.get('/api/faculty', async (req, res) => {
+    try {
+        const [faculty] = await pool.execute('SELECT * FROM faculty');
+        res.send(faculty);
+    } catch (error) {
+        console.error('Error fetching faculty:', error);
+        res.status(500).send('An error occurred while fetching the faculty.');
+    }
 });

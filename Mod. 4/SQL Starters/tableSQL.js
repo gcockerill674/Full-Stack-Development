@@ -14,16 +14,8 @@ con.connect(function(err) {
         return;
     }
 
-    con.query('CREATE DATABASE IF NOT EXISTS `registration-system`', function(err) {
-        if (err) {
-            console.log("Error creating database:");
-            console.log(err);
-            con.end();
-            return;
-        }
-
         con.query(
-            'CREATE TABLE IF NOT EXISTS `registration-system`.students (id INT AUTO_INCREMENT PRIMARY KEY, `first-name` VARCHAR(255), `last-name` VARCHAR(255), `email` VARCHAR(255))',
+            'CREATE TABLE IF NOT EXISTS `registration-system`.faculty (id INT AUTO_INCREMENT PRIMARY KEY, `first-name` VARCHAR(255), `last-name` VARCHAR(255), `email` VARCHAR(255))',
             function(err) {
                 if (err) {
                     console.log("Error creating table:");
@@ -35,5 +27,4 @@ con.connect(function(err) {
                 con.end();
             }
         );
-    });
 });
