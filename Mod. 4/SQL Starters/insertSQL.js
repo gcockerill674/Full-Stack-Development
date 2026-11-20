@@ -15,8 +15,8 @@ con.connect(function(err) {
     }
 
     con.query(
-        'INSERT INTO `registration-system`.students (`first-name`, `last-name`, `email`) VALUES (?, ?, ?)',
-        ['John', 'Doe', 'john.doe@example.com'],
+        'INSERT INTO `registration-system`.faculty (`first-name`, `last-name`, `email`) VALUES (?, ?, ?)',
+        ['Nicholas', 'Catlin', 'nicholas.catlin@example.com'],
         function(err, result) {
             if (err) {
                 console.log("Error inserting data:");
@@ -24,7 +24,7 @@ con.connect(function(err) {
                 con.end();
                 return;
             }
-            console.log(`${result.affectedRows} student inserted.`);
+            console.log(`${result.affectedRows} faculty member inserted.`);
             con.end();
         }
     );

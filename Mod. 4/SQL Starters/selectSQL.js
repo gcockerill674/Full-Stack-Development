@@ -15,16 +15,16 @@ con.connect(function(err) {
     }
 
     con.query(
-        'SELECT `student_id`, `first-name`, `last-name`, `email` FROM `registration-system`.students',
+        'SELECT `ID`, `first-name`, `last-name`, `email` FROM `registration-system`.faculty',
         function(err, results) {
             if (err) {
-                console.log("Error selecting students:");
+                console.log("Error selecting faculty:");
                 console.log(err);
                 con.end();
                 return;
             }
 
-            console.log("Students:");
+            console.log("Faculty:");
             console.log(results);
             con.end();
         }
